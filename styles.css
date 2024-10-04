@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/*================= CSS Reset Above =====================
+=================== Project Code Below ==================*/
+
+:root {
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body{
+    font-family: "League Spartan", sans-serif;
+    font-size: 15px;
+    background-color: var(--white);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    width: 90%;
+    max-width: 600px;
+
+    margin: 5rem auto;
+}
+
+/* Styling the top text box */
+
+.txt-box{
+    margin-bottom: 2.5rem;
+
+    text-align: center;
+}
+
+.heading-txt{
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 2.3rem;
+    letter-spacing: 0px;
+    margin-bottom: 1.5rem;
+    color: var(--very-dark-magenta);
+}
+
+.description{
+    color: var(--dark-grayish-magenta);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Styling the ratings box */
+
+.ratings-box{
+    margin-bottom: 3rem;
+}
+
+.rating-box-1,
+.rating-box-2,
+.rating-box-3{
+    background-color: var(--light-grayish-magenta);
+    margin-bottom: 1.2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1rem;
+}
+
+.rating-description{
+    font-size: 1.15rem;
+    color: var(--very-dark-magenta);
+    font-weight: 700;
+}
+
+.stars{
+    display: flex;
+    gap: .5rem;
+}
+
+/* Styling the cards box */
+
+.box{
+    border-radius: .5rem;
+    margin-bottom: 1.2rem;
+    padding: 2rem;
+
+    background-color: var(--very-dark-magenta);
+}
+
+.names{
+    line-height: 1em;
+    margin: 0;
+    padding: 0;
+}
+.customer-name,
+.customer-reviews{
+    color: var(--white);
+}
+
+.customer-name{
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+
+.customer-reviews{
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.verified-txt{
+    color: var(--soft-pink);
+    font-size: 1.15rem;
+}
+
+.customer-name,
+.verified-txt {
+    margin: 1rem; 
+}
+
+
+.customer-img{
+    border-radius: 100%;
+    width: 15%;
+    height: 15%;
+}
+
+.customer-details{
+    display: flex;
+
+    gap: .5rem;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 950px) {
+    main{
+      width: 80%;
+      max-width: 2000px;
+
+      margin: 2rem 2rem 3rem 2rem;
+    } 
+
+    .top-box{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /* gap: 13rem; */
+      /* border: 10px solid green; */
+    }
+
+    .txt-box{
+      /* border: 5px solid red; */
+      width: 45%;
+
+      text-align: start;
+    }
+
+    .heading-txt{
+      font-size: 3.5rem;
+      line-height: 1em;
+      /* border: 3px solid  yellowgreen; */
+    }
+
+    .ratings-box{
+      margin: 0;
+      padding: 0;
+    }
+
+    .rating-box-1,
+    .rating-box-2,
+    .rating-box-3{
+      flex-direction: row;
+      align-items: center;
+      gap: 2.5rem;
+
+      padding: 1rem 2rem;
+      border-radius: .5rem;
+    }
+
+    .rating-box-1{
+      justify-content: flex-start;
+
+      margin-right: 4rem;
+    }
+
+    .rating-box-2{
+      margin-left: 3rem;
+      margin-right: 2rem;
+
+      justify-content: flex-start;
+    }
+
+    /* .rating-box-2 .stars{
+      padding-left: 2rem;
+    } */
+
+    .rating-box-3{
+      margin-left: 6rem;
+      justify-content: flex-start;
+      margin-bottom: 0;
+    }
+
+    .stars,
+    .rating-description{
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Code for the cards box */
+
+    .cards-box{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .box{
+      padding: 1.5rem 2rem;
+      text-align: start;
+    }
+
+    .box:nth-child(2){
+      margin-top: 3rem;
+
+      padding: 1.5rem;
+    }
+
+    .box:nth-child(3){
+      margin-top: 6rem;
+    }
+
+    .customer-details{
+      margin-bottom: 1rem;
+    }
+
+
+
+}
